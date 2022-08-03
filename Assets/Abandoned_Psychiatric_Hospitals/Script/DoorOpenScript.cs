@@ -1,30 +1,43 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class DoorOpenScript : MonoBehaviour
 {
-    bool doorState = false;
-    int doorCount = 0;
-
-    public void OnTriggerEnter(Collider other){
-        if(other.gameObject.tag != "Player" && other.gameObject.tag != "NPC") {
-            return;
-        }
-        doorState = true;
-        doorCount++;
-        if(doorCount == 1) {
-            transform.GetChild(0).transform.RotateAround(transform.position, Vector3.up, 90);
-        }      
+    bool trig, open;//trig-проверка входа выхода в триггер(игрок должен быть с тегом Player) open-закрыть и открыть дверь
+    public float smooth = 2.0f;//скорость вращения
+    public float DoorOpenAngle = 90.0f;//угол вращения 
+    private Vector3 defaulRot;
+    private Vector3 openRot;
+    // Start is called before the first frame update
+    void Start()
+    {
+        defaulRot = transform.eulerAngles;
+        openRot = new Vector3(defaulRot.x, defaulRot.y + DoorOpenAngle, defaulRot.z);
     }
 
-    public void OnTriggerExit(Collider other){
-        if(other.gameObject.tag != "Player" && other.gameObject.tag != "NPC") {
-            return;
+    // Update is called once per frame
+    void Update()
+    {
+        if (trig)//открыть
+        {
+            transform.eulerAngles = Vector3.Slerp(transform.eulerAngles, openRot, Time.deltaTime * smooth);
         }
-        doorState = false;
-        doorCount--;
-        if(doorCount == 0) {
-            transform.GetChild(0).transform.RotateAround(transform.position, Vector3.down, 90);
-        } 
-        
+        else//закрыть
+        {
+            transform.eulerAngles = Vector3.Slerp(transform.eulerAngles, defaulRot, Time.deltaTime * smooth);
+        }
+    }
+    private void OnTriggerEnter(Collider coll)//вход и выход в\из  триггера 
+    {
+        if (coll.tag == "Player")
+        {
+            trig = true;
+        }
+    }
+    private void OnTriggerExit(Collider coll)//вход и выход в\из  триггера 
+    {
+        if (coll.tag == "Player")
+        {
+            trig = false;
+        }
     }
 }
