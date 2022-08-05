@@ -19,8 +19,10 @@ public class NPCSoldierNav : MonoBehaviour
     void Update()
     {
         soldier.SetDestination(dest.transform.position);
-        if(dest.transform.position.x == 1 && dest.transform.position.y == 2 && dest.transform.position.z == -16 )
+        if(soldier.transform.position.x == 1 && soldier.transform.position.z == -17 )
         {
+            // Rotate soldier to face player
+            soldier.transform.rotation = Quaternion.Euler(0, 0, 0);
             anim.SetBool("stop", true);
         }
         else

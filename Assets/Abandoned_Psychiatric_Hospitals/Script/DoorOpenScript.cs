@@ -28,14 +28,14 @@ public class DoorOpenScript : MonoBehaviour
     }
     private void OnTriggerEnter(Collider coll)//вход и выход в\из  триггера 
     {
-        if (coll.tag == "Player")
+        if (coll.tag == "Player" || coll.tag == "NPC")
         {
             trig = true;
         }
     }
     private void OnTriggerExit(Collider coll)//вход и выход в\из  триггера 
     {
-        if (coll.tag == "Player")
+        if (coll.tag == "Player" || coll.tag == "NPC")
         {
             trig = false;
         }

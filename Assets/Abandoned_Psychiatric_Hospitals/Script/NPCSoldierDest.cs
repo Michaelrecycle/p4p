@@ -11,15 +11,15 @@ public class NPCSoldierDest : MonoBehaviour
     {
         if (other.tag == "NPC")
         {
-            if (pivotPoint == 1)
-            {
-                this.gameObject.transform.position = new Vector3(1, 2, -16);
-                pivotPoint = 2;
-            }
+            //if (pivotPoint == 1)
+            //{
+            //    this.gameObject.transform.position = new Vector3(1, 2, -16);
+            //    pivotPoint = 2;
+            //}
 
             if (pivotPoint == 0)
             {
-                this.gameObject.transform.position = new Vector3(1, 2, -18);
+                this.gameObject.transform.position = new Vector3(1, 2, -17);
                 pivotPoint = 1;
             }
         }
