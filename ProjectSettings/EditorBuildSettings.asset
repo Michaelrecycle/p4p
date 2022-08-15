@@ -5,13 +5,18 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/VR Beginner/Scenes/Final/EscapeRoom.unity
-    guid: 0f290611f0f8be4419d06b71aba4e36a
+    path: Assets/Abandoned_Psychiatric_Hospitals/Scenes/Demo.unity
+    guid: 1bafc89e0c2524a4996d0dd284a28aee
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 27eec8ca4b0a9e54395859b247100b9a,
       type: 2}
-    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: a422e2a2e6c83184e9b23d6413331359,
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: cf9f45a07a7329043a5a1cf590665903,
+      type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: c9826cd9f0444334e9704d3255d1c73f,
       type: 2}
     xr.sdk.mock-hmd.settings: {fileID: 11400000, guid: 5135cb9070d25844e828b77895903b08,
       type: 2}
