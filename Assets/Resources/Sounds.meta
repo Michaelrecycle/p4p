@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Resources/Sounds.meta
 guid: 2325dfb7395efab4db99d1760b7bbb6f
+=======
+guid: cdaa7256a8154534191cf01f940c7155
+>>>>>>> cfb01e9dcf8aee66bfb9cd3c97b6d05127fe44f9:Assets/Samples/XR Interaction Toolkit.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
