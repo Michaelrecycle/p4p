@@ -5,22 +5,17 @@ using UnityEngine;
 
 public class NPCSoldierDest : MonoBehaviour
 {
-    public int pivotPoint;
+    private int spivotPoint = 0;
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "NPC")
+        if (other.tag == "SOLDIER")
         {
-            //if (pivotPoint == 1)
-            //{
-            //    this.gameObject.transform.position = new Vector3(1, 2, -16);
-            //    pivotPoint = 2;
-            //}
 
-            if (pivotPoint == 0)
+            if (spivotPoint == 0)
             {
-                this.gameObject.transform.position = new Vector3(1, 2, -17);
-                pivotPoint = 1;
+                this.gameObject.transform.position = new Vector3(0.5f, 2f, -17f);
+                spivotPoint = 1;
             }
         }
     }

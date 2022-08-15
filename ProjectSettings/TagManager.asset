@@ -7,6 +7,9 @@ TagManager:
   - Ignite
   - Destructible
   - NPC
+  - NURSE
+  - SOLDIER
+  - SENIOR
   layers:
   - Default
   - TransparentFX
