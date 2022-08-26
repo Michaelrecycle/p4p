@@ -28,10 +28,13 @@ public class DoorOpenScript : MonoBehaviour
     }
     private void OnTriggerEnter(Collider coll)//вход и выход в\из  триггера 
     {
+		if(coll.tag != "SOLDIER") {
+			return;
+		}
         trig = true;
     }
-    private void OnTriggerExit(Collider coll)//вход и выход в\из  триггера 
-    {
-        trig = false;
-    }
+    //private void OnTriggerExit(Collider coll)//вход и выход в\из  триггера 
+    //{
+    //    trig = false;
+    //}
 }

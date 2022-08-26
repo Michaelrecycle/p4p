@@ -9,7 +9,7 @@ public class ContinuosMovement : MonoBehaviour
 {
 	public float speed = 1;
     public XRNode inputSource;
-	
+	public float additionalHeight = 0.2f;
 	public float gravity = -9.81f;
 	private float fallingSpeed;
 	public LayerMask groundLayer;
@@ -31,6 +31,9 @@ public class ContinuosMovement : MonoBehaviour
     }
 	
 	private void FixedUpdate() {
+		
+		CapsuleFollowHeadset();
+		
 		Quaternion headYaw = Quaternion.Euler(0, origin.Camera.transform.eulerAngles.y, 0);
 		Vector3 direction = headYaw * new Vector3(inputAxis.x, 0, inputAxis.y);
 		
@@ -46,6 +49,12 @@ public class ContinuosMovement : MonoBehaviour
 		}
 		
 		character.Move(Vector3.up * Time.fixedDeltaTime * fallingSpeed);
+	}
+	
+	void CapsuleFollowHeadset(){
+		character.height = origin.CameraInOriginSpaceHeight + additionalHeight;
+		Vector3 capsuleCenter = transform.InverseTransformPoint(origin.Camera.transform.position);
+		character.center = new Vector3(capsuleCenter.x, character.height/2 + character.skinWidth, capsuleCenter.z);
 	}
 	
 	bool CheckIfGrounded() {
