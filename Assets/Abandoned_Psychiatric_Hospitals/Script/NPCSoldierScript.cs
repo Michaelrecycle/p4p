@@ -35,6 +35,6 @@ public class NPCSoldierScript : MonoBehaviour
 
     public void playAudio(int audio)
     {
-        audioSource.PlayOneShot(Resources.Load<AudioClip>("Sounds/soldier_" + audio));
+        audioSource.PlayOneShot(Resources.Load<AudioClip>("Sounds/USOL_" + audio));
     }
 }

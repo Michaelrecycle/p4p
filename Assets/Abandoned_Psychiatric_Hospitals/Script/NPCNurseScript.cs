@@ -44,6 +44,6 @@ public class NPCNurseScript : MonoBehaviour
 
     public void playAudio(int audio)
     {
-        audioSource.PlayOneShot(Resources.Load<AudioClip>("Sounds/nurse_" + audio));
+        audioSource.PlayOneShot(Resources.Load<AudioClip>("Sounds/N" + audio));
     }
 }

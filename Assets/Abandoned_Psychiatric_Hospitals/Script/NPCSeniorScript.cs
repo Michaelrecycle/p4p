@@ -44,6 +44,6 @@ public class NPCSeniorScript : MonoBehaviour
 
     public void playAudio(int audio)
     {
-        audioSource.PlayOneShot(Resources.Load<AudioClip>("Sounds/senior_" + audio));
+        audioSource.PlayOneShot(Resources.Load<AudioClip>("Sounds/S" + audio));
     }
 }
