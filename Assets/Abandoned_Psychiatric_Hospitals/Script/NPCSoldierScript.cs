@@ -17,9 +17,15 @@ public class NPCSoldierScript : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     void Update()
     {
+        StartCoroutine(run(10f));
+    }
+
+    // Update is called once per frame
+    IEnumerator run(float delay)
+    {
+	yield return new WaitForSeconds(delay);
         soldier.SetDestination(dest.transform.position);
         if (soldier.transform.position.x == 0.5f && soldier.transform.position.z == -17)
         {

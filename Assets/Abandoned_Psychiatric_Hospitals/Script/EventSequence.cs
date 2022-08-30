@@ -26,7 +26,7 @@ public class EventSequence : MonoBehaviour
         NPCSoldierScript soldierScript = soldier.GetComponent<NPCSoldierScript>();
 
         // First conversation
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(10f);
         seniorScript.playAudio(1);
         yield return new WaitForSeconds(3f);
         nurseScript.playAudio(1);
