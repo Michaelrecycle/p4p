@@ -77,12 +77,6 @@ public class EventSequence : MonoBehaviour
         yield return new WaitForSeconds(6f);
         nurseScript.playAudio(7);
 
-
-
-
-        //yield return new WaitForSeconds(5f);
-        //nurse.GetComponent<NavMeshAgent>().transform.rotation = Quaternion.Euler(0, 0, 0);
-
     }
 
 }

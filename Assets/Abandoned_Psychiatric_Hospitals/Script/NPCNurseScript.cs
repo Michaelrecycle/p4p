@@ -22,7 +22,7 @@ public class NPCNurseScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        StartCoroutine(run(80f));
+        StartCoroutine(run(93f));
     }
 
     IEnumerator run(float delay)
