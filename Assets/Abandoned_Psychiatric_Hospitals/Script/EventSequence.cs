@@ -12,6 +12,7 @@ public class EventSequence : MonoBehaviour
     public GameObject senior;
     public GameObject airRaidSiren;
     public GameObject explosion;
+    public GameObject shootingSound;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +25,7 @@ public class EventSequence : MonoBehaviour
         NPCNurseScript nurseScript = nurse.GetComponent<NPCNurseScript>();
         NPCSeniorScript seniorScript = senior.GetComponent<NPCSeniorScript>();
         NPCSoldierScript soldierScript = soldier.GetComponent<NPCSoldierScript>();
+        
 
         // First conversation
         yield return new WaitForSeconds(10f);
@@ -36,6 +38,14 @@ public class EventSequence : MonoBehaviour
         nurseScript.playAudio(2);
         yield return new WaitForSeconds(3f);
         seniorScript.playAudio(3);
+
+        // Air raid siren goes off
+        yield return new WaitForSeconds(4f);
+        airRaidSiren.GetComponent<AudioSource>().Play();
+        // Bombings occur
+        yield return new WaitForSeconds(2f);
+        explosion.GetComponent<AudioSource>().Play();
+        shootingSound.GetComponent<AudioSource>().Play();
 
         // Second Conversation
         yield return new WaitForSeconds(4f);
@@ -51,16 +61,11 @@ public class EventSequence : MonoBehaviour
         yield return new WaitForSeconds(3f);
         seniorScript.playAudio(4);
 
-        // Air raid siren goes off
-        yield return new WaitForSeconds(6f);
-        airRaidSiren.GetComponent<AudioSource>().Play();
 
         // Third Conversation 
         yield return new WaitForSeconds(2f);
         soldierScript.playAudio(4);
-        // Bombings occur
-        yield return new WaitForSeconds(12.5f);
-        explosion.GetComponent<AudioSource>().Play();
+      
         // Resume convo
         yield return new WaitForSeconds(8.5f);
         explosion.GetComponent<AudioSource>().Stop();
