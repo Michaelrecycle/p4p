@@ -36,8 +36,8 @@ public class DoorOpenScript : MonoBehaviour
 		if(coll.tag != "SOLDIER") {
 			return;
 		}
-        trig = true;
         playAudio();
+        trig = true;
 
     }
     //private void OnTriggerExit(Collider coll)//вход и выход в\из  триггера 

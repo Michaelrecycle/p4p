@@ -20,13 +20,23 @@ public class NPCNurseToTheWindow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        StartCoroutine(run(30f));
+        StartCoroutine(run(18f));
     }
 
     IEnumerator run(float delay)
     {
         yield return new WaitForSeconds(delay);
-        
+
+        if (senior.transform.position.x == 4.5f && senior.transform.position.z == -11)
+        {
+            anim.SetBool("stop", true);
+        }
+        else
+        {
+            anim.SetBool("stop", false);
+            
+        }
+        yield return new WaitForSeconds(2f);
         senior.SetDestination(dest.transform.position);
     }
 }

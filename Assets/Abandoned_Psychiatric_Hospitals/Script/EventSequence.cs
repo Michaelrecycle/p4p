@@ -34,7 +34,7 @@ public class EventSequence : MonoBehaviour
         nurseScript.playAudio(1);
         yield return new WaitForSeconds(2f);
         seniorScript.playAudio(2);
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(16f);
         nurseScript.playAudio(2);
         yield return new WaitForSeconds(3f);
         seniorScript.playAudio(3);
@@ -48,12 +48,14 @@ public class EventSequence : MonoBehaviour
         shootingSound.GetComponent<AudioSource>().Play();
 
         // Second Conversation
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(2f);
         soldierScript.playAudio(1);
         yield return new WaitForSeconds(7f);
         nurseScript.playAudio(3);
         yield return new WaitForSeconds(11f);
         soldierScript.playAudio(2);
+        yield return new WaitForSeconds(1f);
+        explosion.GetComponent<AudioSource>().Stop();
         yield return new WaitForSeconds(6f);
         nurseScript.playAudio(4);
         yield return new WaitForSeconds(7f);
@@ -63,19 +65,17 @@ public class EventSequence : MonoBehaviour
 
 
         // Third Conversation 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(6f);
         soldierScript.playAudio(4);
       
         // Resume convo
-        yield return new WaitForSeconds(8.5f);
-        explosion.GetComponent<AudioSource>().Stop();
+        yield return new WaitForSeconds(12f);
         soldierScript.playAudio(5);
         yield return new WaitForSeconds(5f);
         nurseScript.playAudio(5);
-        yield return new WaitForSeconds(8f);
-        // Third convo
 
-        yield return new WaitForSeconds(25f);
+        // Third convo
+        yield return new WaitForSeconds(32f);
         nurseScript.playAudio(6);
         yield return new WaitForSeconds(4f);
         seniorScript.playAudio(5);

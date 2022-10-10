@@ -19,7 +19,7 @@ public class NPCSoldierScript : MonoBehaviour
 
     void Update()
     {
-        StartCoroutine(run(10f));
+        StartCoroutine(run(22f));
     }
 
     // Update is called once per frame
