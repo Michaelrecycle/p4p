@@ -75,7 +75,7 @@ public class EventSequence : MonoBehaviour
         nurseScript.playAudio(5);
 
         // Third convo
-        yield return new WaitForSeconds(32f);
+        yield return new WaitForSeconds(37f);
         nurseScript.playAudio(6);
         yield return new WaitForSeconds(4f);
         seniorScript.playAudio(5);
